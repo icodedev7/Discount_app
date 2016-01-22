@@ -21,7 +21,7 @@ Vagrant.configure("2") do |config|
   # The box settings
   config.vm.define :web do |web|
     # This is the IP we will use to access the VM while it's running.
-    web.vm.network "forwarded_port", guest: 3000, host: 5000
+    web.vm.network "forwarded_port", guest: 3000, host:  proxy-domain.com
 
     # NFS is faster for shared folders
     web.vm.synced_folder ".", "/vagrant", :nfs => true
