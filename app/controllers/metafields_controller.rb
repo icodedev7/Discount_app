@@ -26,7 +26,7 @@ class MetafieldsController < ApplicationController
     @metafield.namespace = @metafield.namespace.parameterize
     if @metafield.save
       flash[:success] = 'Successfully updated metafield.'
-      redirect_to ="https://#params[:redirect_to]"
+      redirect_to params[:redirect_to]
     else
       flash[:danger] = "Your metafield could not be saved: #{@metafield.errors.first}"
       render :action => 'edit'
