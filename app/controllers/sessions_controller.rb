@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
 
   def authenticate
     if shop_name = sanitize_shop_param(params)
-      redirect_to "/auth/shopify?shop=#{shop_name}"
+      redirect_to "https://#{params[:shop].gsub(".myshopify.com","")}.myshopify.com/admin/oauth/authorize?client_id=46177b20f3c16d64efd5d5dfcb7e916d&scope=read_products,read_orders,read_customers,write_themes,write_script_tags,&redirect_uri=https://discountap.herokuapp.com/auth/shopify/callback&state=Callback"
     else
       redirect_to return_address
     end
@@ -46,7 +46,7 @@ class SessionsController < ApplicationController
     name += '.myshopify.com' if !name.include?("myshopify.com") && !name.include?(".")
     name.sub('https://', '').sub('http://', '')
 
-    u = URI("http://#{name}")
+    u = URI("https://#{params[:shop].gsub(".myshopify.com","")}.myshopify.com")
     u.host.ends_with?("myshopify.com") ? u.host : nil
   end
 end
