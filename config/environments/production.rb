@@ -2,7 +2,9 @@ ShopifyMetafields::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  
+  SHOPIFY_API_KEY = "46177b20f3c16d64efd5d5dfcb7e916d"
+   SHOPIFY_SHARED_SECRET = "0090e669972e03310e790fe0f9d920a5"
+   DOMAIN = "http://discountap.herokuapp.com/"
   config.cache_classes = true
 
   # Eager load code on boot. This eager loads most of Rails and

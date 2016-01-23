@@ -10,16 +10,16 @@ Bundler.require(:default, Rails.env)
 
 module ShopifyMetafields
   class Application < Rails::Application
-config.action_dispatch.default_headers = {
-    'X-Frame-Options' => 'ALLOWALL'
-}
+
     # Shopify API connection credentials:
     config.shopify.api_key = '46177b20f3c16d64efd5d5dfcb7e916d'
     config.shopify.secret ='0090e669972e03310e790fe0f9d920a5'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+config.action_dispatch.default_headers = {
+    'X-Frame-Options' => 'ALLOWALL'
+}
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
