@@ -5,9 +5,7 @@ ShopifyMetafields::Application.configure do
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
-  SHOPIFY_API_KEY = "46177b20f3c16d64efd5d5dfcb7e916d"
-   SHOPIFY_SHARED_SECRET = "0090e669972e03310e790fe0f9d920a5"
-   DOMAIN = "http://discountap.herokuapp.com/"
+ 
   config.cache_classes = true
 
   # Do not eager load code on boot. This avoids loading your whole application
