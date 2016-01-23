@@ -30,7 +30,7 @@ class SessionsController < ApplicationController
 
   def authenticate
     if shop_name = sanitize_shop_param(params)
-      redirect_to "/auth/shopify?shop=devlopment-store.myshopify.com"
+      redirect_to "/auth/shopify?shop=#{shop_name}"
     else
       redirect_to return_address
     end
@@ -46,7 +46,7 @@ class SessionsController < ApplicationController
     name += '.myshopify.com' if !name.include?("myshopify.com") && !name.include?(".")
     name.sub('https://', '').sub('http://', '')
 
-    u = URI("http://devlopment-store.myshopify.com")
+    u = URI("http://#{name}")
     u.host.ends_with?("myshopify.com") ? u.host : nil
   end
 end
