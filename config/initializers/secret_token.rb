@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-ShopifyMetafields::Application.config.secret_key_base = 'f8cc4a42b4ad4d16b1dc29a3324cf085-1453545159'
+ShopifyMetafields::Application.config.secret_key_base = 'bc955efbb16ad40d24fd5d3fedc3d2d8-1453459685'

@@ -9,10 +9,10 @@ class MetafieldsController < ApplicationController
     metafield.namespace = metafield.namespace.parameterize
 
     if metafield.save
-      flash[:success] = 'Successfully created metafield.'
+      flash[:success] = 'Successfully created customfield.'
       redirect_to params[:redirect_to]
     else
-      flash[:danger] = 'Your metafield could not be saved.'
+      flash[:danger] = 'Your customfield could not be saved.'
       redirect_to params[:redirect_to]
     end
   end
@@ -25,10 +25,10 @@ class MetafieldsController < ApplicationController
     @metafield = ShopifyAPI::Metafield.find(params[:id]).load(params[:shopify_api_metafield])
     @metafield.namespace = @metafield.namespace.parameterize
     if @metafield.save
-      flash[:success] = 'Successfully updated metafield.'
+      flash[:success] = 'Successfully updated customfield.'
       redirect_to params[:redirect_to]
     else
-      flash[:danger] = "Your metafield could not be saved: #{@metafield.errors.first}"
+      flash[:danger] = "Your customfield could not be saved: #{@metafield.errors.first}"
       render :action => 'edit'
     end
   end
@@ -40,7 +40,7 @@ class MetafieldsController < ApplicationController
   def destroy
     metafield = ShopifyAPI::Metafield.find(params[:id])
     metafield.destroy
-    flash[:success] = 'Successfully deleted metafield.'
+    flash[:success] = 'Successfully deleted customfield.'
     redirect_to params[:redirect_to]
   end
 end
